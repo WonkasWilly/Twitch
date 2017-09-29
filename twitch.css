@@ -2,7 +2,6 @@
     background-color: #4e3482;
     color: white;
     border-radius: 5px;
-    width: 500px;
 }
 h1 {
     text-align: center;
@@ -10,6 +9,9 @@ h1 {
 .btn-group {
     text-align: center;
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn {
     border: 1px white solid;
