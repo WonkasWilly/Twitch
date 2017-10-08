@@ -2,17 +2,27 @@
     background-color: #4e3482;
     color: white;
     border-radius: 5px;
+    padding-bottom: 20px;
+
 }
 h1 {
     text-align: center;
 }
 .btn-group {
     text-align: center;
-    margin: auto;
+    margin: auto auto 2% auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .btn {
     border: 1px white solid;
+}
+.streamer-container {
+    color: black;
+    background-color: white;
+    height: 500px;
+    width: 80%;
+    border-radius: 5px;
+
 }
