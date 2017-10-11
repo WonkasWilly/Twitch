@@ -24,5 +24,16 @@ h1 {
     height: 500px;
     width: 80%;
     border-radius: 5px;
-
+}
+.col {
+    height: 100px;
+}
+#streamer1 {
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    background: url("https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png") center no-repeat;
+    background-size: 100%;
 }

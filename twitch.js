@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
     // This is a sample API response from Twitch, since obtaining an API key is a security issue
     var streamData = [
         {
@@ -104,5 +104,14 @@ $(function(){
         }
     ]
 
-    })
+
+    for (let i=0; i < streamData.length; i++) {
+        if (streamData[i].stream != null) {
+
+        }
+        else {
+            
+        }
+    }
+
 });
