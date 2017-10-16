@@ -28,7 +28,7 @@ h1 {
 .col {
     height: 100px;
 }
-#streamer1 {
+.frame {
     border: 1px solid black;
     border-radius: 50px;
     width: 80px;
