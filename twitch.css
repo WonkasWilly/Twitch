@@ -34,6 +34,15 @@ h1 {
     width: 80px;
     height: 80px;
     margin: auto;
-    background: url("https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png") center no-repeat;
     background-size: 100%;
+}
+#search-streamer-label {
+    display: none;
+}
+#search-streamer{
+    align-items: center;
+    margin: auto auto 2% auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
