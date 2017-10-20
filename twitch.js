@@ -19,8 +19,21 @@ $(function() {
         }
         else {
             $.getJSON(streamUrl, function(data) {
-                console.log(data);
-                console.log(streamUrl);
+
+                var counter = 0;
+                for (let i=0; i < 5; i++) {
+                    var createDiv = document.createElement("div");
+                    createDiv.setAttribute('id', 'row' + i.toString());
+                    document.getElementById('streamer-container').appendChild(createDiv);
+                    for (let x=0; x < 4; x++) {
+                        var createInnerDiv = document.createElement('div');
+                        createInnerDiv.setAttribute('class', 'col card');
+                        createInnerDiv.setAttribute('id', 'col'+counter.toString());
+                        document.getElementById('row' + i.toString()).appendChild(createInnerDiv);
+                        counter += 1;
+                    }
+                }
+
                 
             });
         }
