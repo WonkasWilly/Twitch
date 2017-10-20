@@ -24,6 +24,7 @@ $(function() {
                 for (let i=0; i < 5; i++) {
                     var createDiv = document.createElement("div");
                     createDiv.setAttribute('id', 'row' + i.toString());
+                    createDiv.setAttribute('class', 'row');
                     document.getElementById('streamer-container').appendChild(createDiv);
                     for (let x=0; x < 4; x++) {
                         var createInnerDiv = document.createElement('div');
