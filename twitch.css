@@ -1,9 +1,11 @@
-.container {
+html, body {
+    height: 100vh;
+}
+.container-fluid {
     background-color: #4e3482;
     color: white;
     border-radius: 5px;
-    padding-bottom: 20px;
-
+    height: 100%;
 }
 h1 {
     text-align: center;
@@ -21,9 +23,10 @@ h1 {
 .streamer-container {
     color: black;
     background-color: white;
-    height: 500px;
+    height: 10%;
     width: 80%;
     border-radius: 5px;
+    padding-bottom: 20px;
 }
 .col {
     height: 100px;
@@ -36,9 +39,6 @@ h1 {
     margin: auto;
     background-size: 100%;
 }
-#search-streamer-label {
-    display: none;
-}
 #search-streamer{
     align-items: center;
     margin: auto auto 2% auto;
@@ -46,4 +46,11 @@ h1 {
     justify-content: center;
     text-align: center;
 }
-
+#col0 {
+    background: url('https://static-cdn.jtvnw.net/previews-ttv/live_user_xqcow-320x180.jpg') no-repeat;
+    background-size: cover;
+}
+#col1 {
+    background: url("https://static-cdn.jtvnw.net/previews-ttv/live_user_kragiee-320x180.jpg") no-repeat;
+    background-size: cover;
+}

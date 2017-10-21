@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <h1>Twitch.tv Viewer</h1>
     <div class="btn-group" data-toggle="buttons">
         <button class="btn" id="button-all">All</button>
@@ -26,6 +26,7 @@
     <div class="row form-group">
         <div class="col-lg-6 mx-auto">
             <div class="input-group">
+                <label for="search-bar" class="sr-only">Type in the game you are look for.</label>
                 <input type="text" id ="search-bar" class="form-control" placeholder="What kind of game are you looking for?" aria-label="Search for...">
                 <span class="input-group-btn">
         <button class="btn btn-secondary" type="button" id="search-button">Go!</button>
@@ -36,13 +37,8 @@
 
 
 
-   <div class="streamer-container container">
-       <div class="row">
-           <div class="col card"></div>
-           <div class="col card"></div>
-           <div class="col card"></div>
-           <div class="col card"></div>
-       </div>
+   <div class="streamer-container container-fluid" id="streamer-container">
+
 
    </div>
 </div>
