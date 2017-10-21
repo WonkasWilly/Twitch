@@ -20,7 +20,7 @@ $(function() {
         //Outputs 20 streams based on the input data
         else {
             $.getJSON(streamUrl, function(data) {
-<<<<<<< HEAD
+
                 console.log(streamUrl);
                 var counter = 0;
                 // This creates the multi-grid layout display for the streams
@@ -39,26 +39,6 @@ $(function() {
                  }
                 }
 
-
-=======
-
-                var counter = 0;
-                for (let i=0; i < 5; i++) {
-                    var createDiv = document.createElement("div");
-                    createDiv.setAttribute('id', 'row' + i.toString());
-                    createDiv.setAttribute('class', 'row');
-                    document.getElementById('streamer-container').appendChild(createDiv);
-                    for (let x=0; x < 4; x++) {
-                        var createInnerDiv = document.createElement('div');
-                        createInnerDiv.setAttribute('class', 'col card');
-                        createInnerDiv.setAttribute('id', 'col'+counter.toString());
-                        document.getElementById('row' + i.toString()).appendChild(createInnerDiv);
-                        counter += 1;
-                    }
-                }
-
-                
->>>>>>> d0bf86ba133b6b44c53fc23e16cf11817c353886
             });
         }
     })

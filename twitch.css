@@ -1,11 +1,11 @@
 html, body {
     height: 100vh;
+    background-color: #4e3482;
 }
 .container-fluid {
     background-color: #4e3482;
     color: white;
     border-radius: 5px;
-    height: 100%;
 }
 h1 {
     text-align: center;
@@ -23,13 +23,11 @@ h1 {
 .streamer-container {
     color: black;
     background-color: white;
-    height: 10%;
     width: 80%;
     border-radius: 5px;
-    padding-bottom: 20px;
 }
 .col {
-    height: 100px;
+    height: 200px;
 }
 .frame {
     border: 1px solid black;
