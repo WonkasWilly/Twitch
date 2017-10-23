@@ -1,5 +1,8 @@
 $(function() {
 
+    const allStreamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah';
+    const searchTerm = document.getElementById("search-bar").value;
+
     //This creates the main display/grid that holds all the data from the Twitch API.
     function createGrid() {
         var counter = 0;
@@ -11,14 +14,17 @@ $(function() {
             for (let x=0; x < 4; x++) {
                 var createInnerDiv = document.createElement('div');
                 createInnerDiv.setAttribute('class', 'col card');
-                createInnerDiv.setAttribute('id', 'col' + counter.toString());
                 document.getElementById('row' + i).appendChild(createInnerDiv);
                 counter += 1;
             }
         }
     }
 
+
     createGrid();
+    $(".col").click(function() {
+        alert('this box is working');
+    });
 
 
     $("#search-bar").keyup(function(event){
@@ -30,13 +36,10 @@ $(function() {
 
     $("#search-button").click(function() {
 
-        const searchTerm = document.getElementById("search-bar").value;
         let streamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah&game=' + searchTerm;
-        let allStreamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah';
         //If the input field is blank, the output is 25 random streams.
         if (searchTerm === "") {
             $.getJSON(allStreamUrl, function(data) {
-                console.log(allStreamUrl);
                 alert('Please type in the game you want to stream.');
             })
         }
