@@ -1,11 +1,12 @@
 $(function() {
 
     const allStreamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah';
+    var allStreamData;
     const searchTerm = document.getElementById("search-bar").value;
+    var counter = 0;
 
     //This creates the main display/grid that holds all the data from the Twitch API.
     function createGrid() {
-        var counter = 0;
         for (let i=0; i < 5; i++) {
             var createDiv = document.createElement('div');
             createDiv.setAttribute('class', 'row');
@@ -21,10 +22,14 @@ $(function() {
     }
 
 
+
     createGrid();
-    $(".col").click(function() {
-        alert('this box is working');
+    $.getJSON(allStreamUrl, function(data) {
+        allStreamData = data;
+        console.log(allStreamData);
     });
+    console.log(allStreamData);
+
 
 
     $("#search-bar").keyup(function(event){
