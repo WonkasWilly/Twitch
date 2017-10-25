@@ -1,17 +1,17 @@
 $(function() {
     const allStreamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah';
-    const searchTerm = document.getElementById("search-bar").value;
-    var counter = 0;
 
-
+// When the page first loads, 25 random streams get uploaded.
     $.getJSON(allStreamUrl, function(data) {
         var test = document.getElementsByClassName('col');
         for (let a = 0; a < test.length; a++) {
+            let imgUrl = data.streams[a].preview.medium;
             let imgTag = document.createElement('img');
-            imgTag.setAttribute('src', 'https://static-cdn.jtvnw.net/previews-ttv/live_user_nl_kripp-640x360.jpg');
+            let streamerUrl = data.streams[a].channel.url;
+            imgTag.setAttribute('src', imgUrl);
             test[a].append(imgTag);
             test[a].addEventListener('click', function() {
-                window.open('https://www.google.com');
+                window.open(streamerUrl);
             })
         };
     });
@@ -27,20 +27,17 @@ $(function() {
 
 // This give the input button a click event handler.
     $("#search-button").click(function() {
-
+        let searchTerm = document.getElementById("search-bar").value;
         let streamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah&game=' + searchTerm;
-        //If the input field is blank, the output is 25 random streams.
-        if (searchTerm === "") {
-            $.getJSON(allStreamUrl, function(data) {
-                alert('Please type in the game you want to stream.');
-            })
-        }
-        //Outputs 20 streams based on the input data
-        else {
-            $.getJSON(streamUrl, function(data) {
 
-            });
+        if (searchTerm === '') {
+            alert('Don\'t forget to type in the game you want to watch!');
         }
+        else {
+            searchTerm = document.getElementById("search-bar").value;
+            console.log(streamUrl);
+        }
+
     })
 
 });
