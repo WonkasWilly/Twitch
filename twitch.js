@@ -3,37 +3,29 @@ $(function() {
     const allStreamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah';
     const searchTerm = document.getElementById("search-bar").value;
 
-    //This creates the main display/grid that holds all the data from the Twitch API.
-    function createGrid() {
-        var counter = 0;
-        for (let i=0; i < 5; i++) {
-            var createDiv = document.createElement('div');
-            createDiv.setAttribute('class', 'row');
-            createDiv.setAttribute('id', 'row' + i);
-            document.getElementById('streamer-container').appendChild(createDiv);
-            for (let x=0; x < 4; x++) {
-                var createInnerDiv = document.createElement('div');
-                createInnerDiv.setAttribute('class', 'col card');
-                document.getElementById('row' + i).appendChild(createInnerDiv);
-                counter += 1;
-            }
-        }
-    }
-
-
-    createGrid();
-    $(".col").click(function() {
-        alert('this box is working');
+    $.getJSON(allStreamUrl, function(data) {
+        console
     });
+    var test = document.getElementsByClassName('col');
+    for (let a = 0; a < test.length; a++) {
+        test[a].addEventListener('click', function() {
+            window.open('https://www.google.com');
+        })
+    };
 
 
+
+
+
+
+// This allows the enter key to do the same function as clicking
     $("#search-bar").keyup(function(event){
         if (event.keyCode === 13) {
             $("#search-button").click();
     }
     });
 
-
+// This give the input button a click event handler.
     $("#search-button").click(function() {
 
         let streamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah&game=' + searchTerm;
