@@ -1,18 +1,19 @@
 $(function() {
-
     const allStreamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah';
+
     const searchTerm = document.getElementById("search-bar").value;
 
     $.getJSON(allStreamUrl, function(data) {
-        console
+        var test = document.getElementsByClassName('col');
+        for (let a = 0; a < test.length; a++) {
+            let imgTag = document.createElement('img');
+            imgTag.setAttribute('src', 'https://static-cdn.jtvnw.net/previews-ttv/live_user_nl_kripp-640x360.jpg');
+            test[a].append(imgTag);
+            test[a].addEventListener('click', function() {
+                window.open('https://www.google.com');
+            })
+        };
     });
-    var test = document.getElementsByClassName('col');
-    for (let a = 0; a < test.length; a++) {
-        test[a].addEventListener('click', function() {
-            window.open('https://www.google.com');
-        })
-    };
-
 
 
 
@@ -38,7 +39,7 @@ $(function() {
         //Outputs 20 streams based on the input data
         else {
             $.getJSON(streamUrl, function(data) {
-                createGrid();
+
             });
         }
     })
