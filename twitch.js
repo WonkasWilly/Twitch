@@ -12,10 +12,11 @@ $(function() {
             imgTag.setAttribute('src', imgUrl);
             test[a].append(imgTag);
             let createAnchor = document.createElement('a');
-            createAnchor.setAttribute('src', streamerUrl);
+            createAnchor.setAttribute('href', streamerUrl);
             createAnchor.setAttribute('target', '_blank');
             let imgSelector = document.querySelector("img[src='" + imgUrl + "']");
-            console.log(imgSelector);
+            imgSelector.parentNode.insertBefore(createAnchor, imgSelector);
+            createAnchor.appendChild(imgSelector);
         }
 
     });
@@ -39,18 +40,21 @@ $(function() {
         else {
             $.getJSON(streamUrl, function(data) {
                 $('.col').empty();
-                console.log(data);
+                let searchTerm = document.getElementById("search-bar").value;
+                let streamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah&game=' + searchTerm;
                 for (let a = 0; a < test.length; a++) {
                     let imgUrl = data.streams[a].preview.medium;
                     let imgTag = document.createElement('img');
                     let streamerUrl = data.streams[a].channel.url;
-                    console.log(streamerUrl);
                     imgTag.setAttribute('src', imgUrl);
                     test[a].append(imgTag);
-                    test[a].addEventListener('click', function() {
-                        window.open(streamerUrl);
-                    })
-                };
+                    let createAnchor = document.createElement('a');
+                    createAnchor.setAttribute('href', streamerUrl);
+                    createAnchor.setAttribute('target', '_blank');
+                    let imgSelector = document.querySelector("img[src='" + imgUrl + "']");
+                    imgSelector.parentNode.insertBefore(createAnchor, imgSelector);
+                    createAnchor.appendChild(imgSelector);
+                }
             });
     }
 
