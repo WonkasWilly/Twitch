@@ -1,4 +1,5 @@
 $(function() {
+
     const allStreamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah';
     const test = document.getElementsByClassName('col');
 
@@ -10,10 +11,13 @@ $(function() {
             let streamerUrl = data.streams[a].channel.url;
             imgTag.setAttribute('src', imgUrl);
             test[a].append(imgTag);
-            test[a].addEventListener('click', function() {
-                window.open(streamerUrl);
-            })
-        };
+            let createAnchor = document.createElement('a');
+            createAnchor.setAttribute('src', streamerUrl);
+            createAnchor.setAttribute('target', '_blank');
+            let imgSelector = document.querySelector("img[src='" + imgUrl + "']");
+            console.log(imgSelector);
+        }
+
     });
 
 // This allows the enter key to do the same function as clicking
@@ -28,7 +32,7 @@ $(function() {
         let searchTerm = document.getElementById("search-bar").value;
         let streamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah&game=' + searchTerm;
 // If the input is left blank, you'll get an alert.
-        if (searchTerm === '') {
+      if   (searchTerm === '') {
             alert('Don\'t forget to type in the game you want to watch!');
         }
 // This gives you 25 streams of the stream of your choice.
