@@ -3,6 +3,18 @@ $(function() {
     const allStreamUrl = 'https://api.twitch.tv/kraken/streams/?client_id=0vq0ks45nlz5gv55gd937j5cb4lqah';
     const test = document.getElementsByClassName('col');
 
+// This is vanilla JS for fading in an element
+    function fadeIn(element) {
+        var op = 0.1;  // initial opacity
+        var timer = setInterval(function () {
+            if (op >= 1){
+                clearInterval(timer);
+            }
+            element.style.opacity = op;
+            op += 0.1;
+        }, 1000);
+    }
+
 // When the page first loads, 25 random streams get uploaded.
     $.getJSON(allStreamUrl, function(data) {
         for (let a = 0; a < test.length; a++) {
